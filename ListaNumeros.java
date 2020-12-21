@@ -123,8 +123,18 @@ public class ListaNumeros
      *  
      */
     public int[] buscarPosicionesDe(int numero) {
-        
-        return null;
+       boolean encontrado = false;
+       int i = 0;
+       while (i < lista.length && ! encontrado) {
+         if (lista[i] == numero) {
+           encontrado = true;
+         }
+         else {
+           i++;
+         }
+       }
+        int[] posiciones = new int[i];
+        return posiciones;
 
     }
 
@@ -182,8 +192,16 @@ public class ListaNumeros
      * 
      */
     public int[][] toArray2D() {
-        
-        return null;
+        int[] longitudFilas = lista;
+        int[][] ragged = new int[4][];
+        for (int fila = 0; fila < ragged.length; fila++) {
+            ragged[fila] = new int[longitudFilas[fila]];
+            for (int col = 0; col < ragged[fila].length; col++)  {
+                ragged[fila][col] = 'X';
+            }
+        }
+      
+        return ragged;
     }
 
     /**
